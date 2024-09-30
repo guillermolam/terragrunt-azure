@@ -1,0 +1,5 @@
+environment: dev
+storage_account_tier: Standard
+storage_account_replication: LRS
+storage_account_name: terraformdevstacc
+container_name: terraformtfstatecontainer

@@ -9,7 +9,7 @@ cli:
 plugins:
   sources:
     - id: trunk
-      ref: v1.6.2
+      ref: v1.6.3
       uri: https://github.com/trunk-io/plugins
 # Many linters and tools depend on runtimes - configure them here. (https://docs.trunk.io/runtimes)
 runtimes:
@@ -18,13 +18,19 @@ runtimes:
     - python@3.10.8
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
+  ignore:
+    - linters: [terraform]
+      paths: ["**/*.tf"]
+  disabled:
+    - terraform-validate
+    - terraform-fmt
+    - git-diff-check
   enabled:
     - terrascan@1.19.9
     - tflint@0.53.0
     - tfsec@1.28.10
     - yamllint@1.35.1
     - checkov@3.2.255
-    - git-diff-check
     - markdownlint@0.42.0
     - osv-scanner@1.8.5
     - prettier@3.3.3

@@ -1,1 +1,6 @@
-location: "France Central"
+environment: dev
+location: France Central
+vnet_name: aks-vnet
+vnet_address_space: [10.0.0.0/16]
+aks_subnet_name: aks-subnet
+aks_subnet_address_prefixes: [10.0.1.0/24]

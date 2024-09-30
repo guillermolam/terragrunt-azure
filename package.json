@@ -1,8 +1,15 @@
 {
   "scripts": {
     "trunk": "trunk",
-    "lint": "trunk check",
-    "fmt": "trunk fmt"
+    "lint": "bash .trunk/tools/trunk check",
+    "fmt": "bash .trunk/tools/trunk fmt --include-existing-autofixes -a",
+    "init": "pnpm install && bash ./.config/azure-init.zsh",
+    "azure-info": "pnpm install && bash ./.config/azinfo.bash",
+    "validate": "pnpm run lint && bash .trunk/tools/terragrunt run-all validate --terragrunt-parallelism 10",
+    "plan": "pnpm run validate && bash .trunk/tools/terragrunt run-all plan --terragrunt-parallelism 10",
+    "winIp": "netsh interface ip show config",
+    "linuxIp": "wsl.exe hostname -I",
+    "wsl2lan": "sudo netsh interface portproxy add v4tov4 listenport=34517 listenaddress=0.0.0.0 connectport=34517 connectaddress=172.31.172.81"
   },
   "devDependencies": {
     "@trunkio/launcher": "^1.3.2"

@@ -9,7 +9,8 @@
     "plan": "pnpm run validate && bash .trunk/tools/terragrunt run-all plan --terragrunt-parallelism 10",
     "winIp": "netsh interface ip show config",
     "linuxIp": "wsl.exe hostname -I",
-    "wsl2lan": "sudo netsh interface portproxy add v4tov4 listenport=34517 listenaddress=0.0.0.0 connectport=34517 connectaddress=172.31.172.81"
+    "env:Ip": "$IpAddress = $(ipconfig | where {$_ -match 'IPv4.+\\s(\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3})' } | out-null; $Matches[1])",
+    "wsl2lan": "netsh interface portproxy add v4tov4 listenport=34517 listenaddress=0.0.0.0 connectport=34517 connectaddress=172.31.172.81"
   },
   "devDependencies": {
     "@trunkio/launcher": "^1.3.2"

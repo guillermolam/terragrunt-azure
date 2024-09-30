@@ -19,6 +19,9 @@ runtimes:
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
   enabled:
+    - terrascan@1.19.1
+    - tflint@0.53.0
+    - tfsec@1.28.10
     - yamllint@1.35.1
     - checkov@3.2.255
     - git-diff-check

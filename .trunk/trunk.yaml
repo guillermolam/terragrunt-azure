@@ -29,7 +29,6 @@ lint:
 actions:
   enabled:
     - trunk-check-pre-push-always
-    - npm-check-pre-push
     - trunk-announce
     - trunk-check-pre-push
     - trunk-fmt-pre-commit

@@ -19,7 +19,7 @@ runtimes:
 # This is the section where you manage your linters. (https://docs.trunk.io/check/configuration)
 lint:
   enabled:
-    - terrascan@1.19.1
+    - terrascan@1.19.9
     - tflint@0.53.0
     - tfsec@1.28.10
     - yamllint@1.35.1
@@ -39,7 +39,7 @@ actions:
 tools:
   auto_sync: true
   enabled:
-    - terramate@0.10.5
+    - terramate@0.10.6
     - terraform@1.1.4
     - terrascan@1.19.9
     - terragrunt@0.67.14
